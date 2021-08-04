@@ -1,0 +1,18 @@
+<html>
+<script>
+    var cord;
+    function success(pos){
+        cord=pos.coords;
+        document.frm.action="{{url_for('crop_recommend',lat='cord.latitude',long='cord.longitude')}}";
+    }
+</script>
+    <h1 style="text-align: center;"><b>Crop Recommendation System</b></h1>
+    <body>
+    <form id="frm" action="" method="POST">
+        <input type="text" id="tfield" name="textfield"><br>
+        <input type="submit" onclick="navigator.geolocation.getCurrentPosition(success);" value="Submit">
+        
+
+    </form>
+</body>
+</html>

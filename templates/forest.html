@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>Crop Recommendation Using Machine Learning</title>
+ <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="./static/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="./static/css2/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <!-- WebPage FavIcon-->
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+
+</head>
+
+<body>
+  <nav class="light-green lighten-1" role="navigation">
+    <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo"></a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="/">Home</a></li>
+      </ul>
+
+      <ul id="nav-mobile" class="sidenav">
+        <li><a href="/">Home</a></li>
+      </ul>
+      <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+
+
+  <div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+      <br><br>
+      <h1 class="header center green-text">Crop Recommendation System</h1>
+      <div class="row center">
+        <h5 class="header col s12 light">Recommend a Suitable Crop For Your Farm
+        <br>
+        </h5>
+      </div>
+
+              <div class="row">
+    <form action='/predict' method="POST" class="col s12">
+      <div class="row">
+        <div class="input-field col s4">
+          <label for="n"><b>Nitrogen</b></label>
+          <br>
+        <input   id="n" name='Nitrogen'type="number" class="validate"  required>
+      </div>
+        <div class="input-field col s4">
+          <label for="p"><b>Phosphorous</b></label>
+          <br>
+        <input   id="p" name='Phosphorous'type="number" class="validate"  required>
+      </div>
+        <div class="input-field col s4">
+            <label for="pot"><b>Potassium</b></label>
+            <br>
+          <input   id="pot" name='Potassium'type="number" class="validate"  required>
+        </div>
+        <div class="input-field col s4">
+
+          <label for="ph"><b>pH Level</b></label>
+            <br>
+          <input id="ph"  name="pH" type="number" step="0.01" class="validate" required>
+
+        </div>
+
+        <div class="input-field col s4">
+            <label for="rf"><b>Rainfall(in mm)</b></label>
+            <br>
+          <input id="rf" name="Rainfall" type="number" step="0.01" class="validate" required>
+
+        </div>
+		<div class="input-field col s4">
+            <label for="city"><b>City</b></label>
+            <br>
+          <input id="city" name="City" type="text" class="validate">
+
+        </div>
+
+      </div>
+
+      <div class="row center">
+          <button type="button" onclick="navigator.geolocation.getCurrentPosition(success,err)" class="btn-large waves-effect waves-sky blue">Use Live Location</button>
+          <button type="submit" class="btn-large waves-effect waves-light orange">Recommend Crop</button>
+        
+    </div>
+    </form>
+      </div>
+      <br>
+      <div class="row center">
+        <h5 class="header col s12 light">{{pred}}</h5>
+      </div>
+      <br>
+
+  </div>
+</div>
+
+
+  <br><br>
+</div>
+</div>>
+
+<footer class="page-footer orange">
+  <div class="container">
+    <div class="row">
+      <div class="col l6 s12">
+        <h5 class="white-text">About The Project</h5>
+        <p class="grey-text text-lighten-4">The Crop Recommendation System uses Machine Learning in order to recommend the optimal crop based on the soil and weather conditions.You can contact us by using the links provided.</p>
+
+
+      </div>
+      <div class="col l3 s12">
+        <h5 class="white-text">Roll Number</h5>
+        <ul>
+          <li><a class="white-text" href="#!">18311A0566</a></li>
+          <li><a class="white-text" href="#!">18311A0572</a></li>
+          <li><a class="white-text" href="#!">18311A0578</a></li>
+        </ul>
+      </div>
+      <div class="col l3 s12">
+        <h5 class="white-text">Name</h5>
+        <ul>
+          <li><a class="white-text" href="#!">Aneesh K</a></li>
+          <li><a class="white-text" href="#!">B Pravalika</a></li>
+          <li><a class="white-text" href="#!">E Gayathri</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-copyright">
+    <div class="container">
+    Made by <a class="orange-text text-lighten-3" href="http://materializecss.com">Materialize</a>
+    </div>
+  </div>
+</footer>
+
+
+<!--  Scripts-->
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src=".js/materialize.js"></script>
+<script src="js/init.js"></script>
+<script src="./static/js/location.js"></script>
+
+
+</body>
+</html>
