@@ -1,4 +1,4 @@
-from os import P_DETACH
+#from os import P_DETACH
 from flask import Flask,request,url_for,render_template
 import pandas as pd
 import numpy as np
